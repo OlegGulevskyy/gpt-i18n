@@ -1,0 +1,17 @@
+name: "GPT Internalization (gpt-i18n)"
+description: "Translate your files / git diffs"
+branding:
+  icon: "book-open"
+  color: "blue"
+
+inputs:
+  input1:
+    description: "Input 1 description"
+    required: true
+  input2:
+    description: "Input 2 description"
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
