@@ -15,11 +15,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: List workspace contents (before)
-        run: |
-          echo "Workspace contents:"
-          ls -a
-
       - name: Run GPT-i18n (remote)
         uses: OlegGulevskyy/GPT-i18n@1.0.0
         with:
