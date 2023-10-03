@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run GPT-i18n (remote)
-        uses: OlegGulevskyy/GPT-i18n@1.0.0
+        uses: OlegGulevskyy/GPT-i18n@test-branch # TODO: update version to actual one
         with:
           input1: ${{ github.event.pull_request.head.sha }}
           input2: "Hello world"
