@@ -17,6 +17,3 @@ jobs:
         with:
           input1: ${{ github.event.pull_request.head.sha }}
           input2: "Hello world"
-
-      - name: Run a one-line script
-        run: echo "A PR was created!"
