@@ -3,6 +3,9 @@ name: Local Test Development
 on:
   pull_request:
     types: [opened]
+  push:
+    branches:
+      - "**"
 
 jobs:
   run-on-pr:
@@ -11,6 +14,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: List workspace contents (before)
+        run: |
+          echo "Workspace contents:"
+          ls -R
+          echo "Root directory contents:"
+          ls -R /
 
       - name: Run GPT-i18n (remote)
         uses: OlegGulevskyy/GPT-i18n@1.0.0
