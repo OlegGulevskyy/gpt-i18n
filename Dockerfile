@@ -15,4 +15,5 @@ COPY --from=builder /app/gpt-i18n /gpt-i18n
 RUN ls -a /
 RUN chmod +x /gpt-i18n
 
-CMD ["/gpt-i18n"]
+CMD ["ls -a /"]
+# CMD ["/gpt-i18n"]

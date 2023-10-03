@@ -15,9 +15,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check architecture
-        run: uname -m
-
       - name: Run GPT-i18n (remote)
         uses: OlegGulevskyy/GPT-i18n@test-branch # TODO: update version to actual one
         with:
