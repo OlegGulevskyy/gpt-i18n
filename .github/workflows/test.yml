@@ -14,14 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run GPT-i18n (local)
-        uses: ./
-        with:
-          input1: ${{ github.event.pull_request.head.sha }}
-          input2: "Hello world"
+      - name: My step
+        uses: docker://ghcr.io/balverine/gpt-i18n:1
+        with: # if your Docker image expects inputs
+          input1: "value"
 
-      - name: Run GPT-i18n (remote)
-        uses: OlegGulevskyy/GPT-i18n@1.0.0
-        with:
-          input1: ${{ github.event.pull_request.head.sha }}
-          input2: "Hello world"
+      # - name: Run GPT-i18n (local)
+      #   uses: ./
+      #   with:
+      #     input1: ${{ github.event.pull_request.head.sha }}
+      #     input2: "Hello world"
+      #
+      # - name: Run GPT-i18n (remote)
+      #   uses: OlegGulevskyy/GPT-i18n@1.0.0
+      #   with:
+      #     input1: ${{ github.event.pull_request.head.sha }}
+      #     input2: "Hello world"
