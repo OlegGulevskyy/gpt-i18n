@@ -1,18 +1,13 @@
 name: Publish gpt-i18n
 
 on:
-  pull_request:
-    types: [opened]
   push:
-    branches: "**"
-
-# on:
-#   push:
-#     branches:
-#       - master
+    branches:
+      - master
 
 jobs:
   build-and-push:
+    name: Build and Publish gpt-i18n
     runs-on: ubuntu-latest
 
     steps:
