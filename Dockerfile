@@ -12,6 +12,5 @@ FROM alpine
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /app/gpt-i18n /gpt-i18n
 
-RUN uname -m
-
-CMD ["/gpt-i18n"]
+# CMD ["/gpt-i18n"]
+CMD file /gpt-i18n
