@@ -3,6 +3,8 @@ name: Local Test Development
 on:
   pull_request:
     types: [opened]
+  push:
+    branches: "**"
 
 jobs:
   run-on-pr:
