@@ -33,7 +33,7 @@ jobs:
           context: .
           push: true
           tags: balverine/gpt-i18n:latest
-          # platforms: linux/amd64
+          platforms: linux/amd64/v4
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
