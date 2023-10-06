@@ -4,7 +4,7 @@ FROM golang:1.21.1 as builder
 WORKDIR /app
 COPY . .
 
-RUN GOOS=linux GOARCH=amd64 go build -v -o gpt-i18n
+RUN go build -v -o gpt-i18n
 
 # Use a minimal image to run the compiled program
 FROM alpine
