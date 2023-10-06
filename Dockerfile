@@ -1,4 +1,4 @@
-FROM golang:1.21.1 as builder
+FROM golang:1.21.1-alpine as builder
 
 # Copy local code to the container image.
 WORKDIR /app

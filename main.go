@@ -20,7 +20,9 @@ func main() {
 
 	r, err := git.PlainOpen("./")
 	if err != nil {
-		panic(err)
+		fmt.Println("[gpt-i18n] Error: Not a git repository. Exiting.")
+		os.Exit(1)
+		return
 	}
 
 	h, err := r.Head()
