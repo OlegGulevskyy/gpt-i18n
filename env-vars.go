@@ -29,7 +29,7 @@ func getEnvValue(env string) string {
 
 type InputValues struct {
 	/** Directories that run gpt-i18n against. */
-	dirs []string
+	globs []string
 	/** Translate files / differences to languages, comma separated. */
 	targetLangs []string
 	/** OpenAI API Key to use. */
@@ -55,7 +55,7 @@ func getGhInputVariables() InputValues {
 
 	for _, env := range envs {
 		if strings.Contains(env, dirKey) {
-			inputValues.dirs = append(inputValues.dirs, getEnvValue(env))
+			inputValues.globs = append(inputValues.globs, getEnvValue(env))
 		}
 
 		if strings.Contains(env, targetLangsKey) {
@@ -73,7 +73,7 @@ func getGhInputVariables() InputValues {
 }
 
 func ensureRequiredEnvsPresent(envValues *InputValues) {
-	if envValues.dirs == nil || len(envValues.dirs) == 0 {
+	if envValues.globs == nil || len(envValues.globs) == 0 {
 		ErrLog(fmt.Sprintf("No directories to run gpt-i18n in. Set %s*ANYTHING* in 'with' value", GPT_I18N_GLOB_VAR))
 		os.Exit(1)
 	}
