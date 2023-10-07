@@ -12,6 +12,10 @@ func main() {
 	ghInput := getGhInputVariables()
 	ensureRequiredEnvsPresent(&ghInput)
 
+	fmt.Println(ghInput.openAiApiKey)
+	fmt.Println(ghInput.globs)
+	fmt.Println(ghInput.targetLangs)
+
 	r, err := git.PlainOpen("./")
 	if err != nil {
 		ErrLog("Not a git repository. Exiting.")
